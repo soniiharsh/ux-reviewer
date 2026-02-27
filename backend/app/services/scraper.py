@@ -2,9 +2,12 @@ import httpx
 from bs4 import BeautifulSoup
 from app.schemas.review import ScrapedPage
 
-
 async def scrape_page(url: str) -> ScrapedPage:
-    async with httpx.AsyncClient(follow_redirects=True, timeout=20) as client:
+    async with httpx.AsyncClient(
+    follow_redirects=True,
+    timeout=20,
+    verify=False
+) as client:
         response = await client.get(url)
         html = response.text
 
