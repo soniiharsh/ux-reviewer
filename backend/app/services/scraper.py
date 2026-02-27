@@ -56,3 +56,9 @@ async def scrape_page(url: str) -> ScrapedPage:
         forms=forms,
         main_content=main_content
     )
+async def scraper_health_check():
+    try:
+        await scrape_page("https://example.com")
+        return "ok"
+    except Exception as e:
+        return f"error: {str(e)}"
