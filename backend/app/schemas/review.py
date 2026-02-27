@@ -1,5 +1,5 @@
-from pydantic import BaseModel, HttpUrl, field_validator
-from typing import List, Literal
+from pydantic import BaseModel, field_validator
+from typing import List, Literal, Optional, Dict
 from datetime import datetime
 
 
@@ -7,13 +7,13 @@ from datetime import datetime
 
 class ScrapedPage(BaseModel):
     url: str
-    title: str
-    meta_description: str
-    headings: List[str]
-    buttons: List[str]
-    nav_links: List[str]
-    forms: List[dict]          # [{label, placeholder, type}]
-    main_content: str          # first 2000 chars
+    title: Optional[str] = None
+    meta_description: Optional[str] = None
+    headings: List[str] = []
+    buttons: List[str] = []
+    nav_links: List[str] = []
+    forms: List[Dict[str, str]] = []   # [{label, placeholder, type}]
+    main_content: str
 
 
 # ── LLM Output ────────────────────────────────────────────────────────────────
