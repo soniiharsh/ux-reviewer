@@ -95,13 +95,6 @@ Frontend runs at `http://localhost:3000`
 - ✅ CORS configured for deployment
 - ✅ No hardcoded secrets — environment variables only
 
-## What Is Not Implemented
-
-- ❌ User authentication / multi-tenant history
-- ❌ PDF export of report
-- ❌ Screenshot capture of the page
-- ❌ Webhook / async job queue for long scrapes
-- ❌ Rate limiting on the API
 
 ---
 
